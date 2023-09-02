@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "leonardjouve/greeter";
+option java_multiple_files = true;
+option java_package = "com.grpc";
+option java_outer_classname = "HelloProto";
+
+service Greeter {
+    rpc Greet(HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+    string name = 1;
+    message Test {
+        string test = 1;
+        bool bla = 2;
+    }
+    Test cool = 2;
+    int32 test = 3;
+}
+
+message HelloResponse {
+    string greetings = 1;
+}
